@@ -1,0 +1,197 @@
+/*
+  <!-- h/t https://codepen.io/mcraiganthony/pen/NxGxqm -->
+*/
+/*@gray-darker:               #444444;
+@gray-dark:                 #696969;
+@gray:                      #999999;
+@gray-light:                #cccccc;
+@gray-lighter:              #ececec;
+@gray-lightest:             lighten(@gray-lighter,4%);*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  background-color: #f0f0f0;
+}
+body {
+  color: #999999;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: "liga" on;
+}
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  border: 0;
+  padding: 1rem;
+  padding-right: 1.3rem;
+}
+img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #696969;
+  margin: 0.25rem;
+  padding: 0.25rem;
+  text-transform: lowercase;
+  font-size: 1.6em;
+}
+.btn.third {
+  width: calc(33.333% - 0.5rem);
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+}
+.btn.full {
+  width: calc(100% - 0.5rem);
+  background-color: #f9f9f9;
+  border: 1px solid #cccccc;
+}
+.small{
+  font-size: 0.6em;
+}
+.btn:hover{
+  background-color: #c9c9c9;
+  color: #FFF;
+}
+.btn-block {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.cards-item {
+  display: flex;
+  padding: 1em;
+}
+.cards-item.quarter {
+  width: calc(25% - 0em);
+}
+.cards-item.half {
+  width: calc(50% - 0em);
+}
+.cards-item.third {
+  width: calc(33% - 0em);
+}
+@media(max-width: 900px) {
+  .cards-item.quarter, .cards-item.half, .cards-item.third{
+    width: calc(50% - 2em)
+  };
+}
+@media(max-width: 700px) {
+  .cards-item.quarter, .cards-item.half, .cards-item.third{
+    width: 100%
+  };
+}
+.card {
+  background-color: white;
+  /*border-radius: 0.25rem;*/
+  box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100%;
+}
+.card-content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  /*padding: 0.25rem;*/
+}
+.card-image {
+  background-image: url("https://via.placeholder.com/300/BBBBBB/FFFFFF/");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /*border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;*/
+  /*-webkit-filter: contrast(70%);*/
+  /*filter: contrast(70%);*/
+  overflow: hidden;
+  position: relative;
+  /*-webkit-transition: filter 0.5s cubic-bezier(.43,.41,.22,.91);*/
+  /*transition: filter 0.5s cubic-bezier(.43,.41,.22,.91);*/
+}
+.card-image::before {
+  content: "";
+  display: block;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+}
+.card-image.landscape::before {
+  content: "";
+  display: block;
+  padding-top: 40%;
+}
+
+@media(min-width: 40rem) {
+  .card-image::before {
+    /* padding-top: 66.6%; */ /* 3:2 aspect ratio */
+    padding-top: 80%;
+  }
+}
+.card-container {
+  padding: 0 1rem;
+}
+
+.card-title {
+  color: #696969;
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 0.75em;
+}
+a {
+  text-decoration: none;
+}
+.card-text {
+  flex: 1 1 auto;
+  font-size: 0.875rem;
+  line-height: 1.25;
+  margin-bottom: 1.25rem;
+}
+.section-title {
+  color: #696969;
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-top: 0.75em;
+}
+header{
+  width: 100%;
+  background-color: #FFFFFF;
+  padding: 2em;
+  margin-bottom: 3em;
+  text-align: center;
+  box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25);
+}
+footer{
+  width: 100%;
+  background-color: #333333;
+  color: #EEEEEE;
+  padding: 2em;
+  margin-top: 3em;
+  text-align: center;
+  border-top: 3px solid #FFF;
+  line-height: 10em;
+}
